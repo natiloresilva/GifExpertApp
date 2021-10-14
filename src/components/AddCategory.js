@@ -13,8 +13,9 @@ export const AddCategory = ({setCategories, categories}) => {
         e.preventDefault()
        
         if(inputValue.trim().length > 2){
-            //Si no mandaba las categories por props también podría haber hecho ===> setCategories( cates => [...cates, 'HunterXHunter'])
-            setCategories([inputValue, ...categories])
+            //Si no mandaba las categories por props también podría haber hecho ===> 
+            setCategories( cates => [ inputValue, ...cates])
+            //setCategories([inputValue, ...categories])
             setInputValue('')
         }
         
@@ -23,6 +24,7 @@ export const AddCategory = ({setCategories, categories}) => {
 
     return (
         <form onSubmit={handleSubmit}>
+            <p>{inputValue}</p>
             <input 
                 type='text'
                 value={inputValue}
